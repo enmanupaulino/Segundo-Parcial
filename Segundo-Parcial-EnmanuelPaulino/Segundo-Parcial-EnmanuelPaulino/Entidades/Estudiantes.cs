@@ -13,7 +13,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.Entidades
         public int EstudianteId { get; set; }
         public DateTime FechaIngreso { get; set; }
         public string Nombres { get; set; }
-        public double Balance { get; set; }
+        public decimal Balance { get; set; }
         public Estudiantes()
         {
             EstudianteId = 0;

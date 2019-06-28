@@ -13,7 +13,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.Entidades
 
         public int AsignaturasId { get; set; }
         public string Descripcion { get; set; }
-        public double Creditos { get; set; }
+        public decimal Creditos { get; set; }
         public Asignaturas()
         {
             AsignaturasId = 0;
