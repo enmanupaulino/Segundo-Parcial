@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Segundo_Parcial_EnmanuelPaulino
+namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
 {
-    public partial class Form1 : Form
+    public partial class Inscripcion : Form
     {
-        public Form1()
+        public Inscripcion()
         {
             InitializeComponent();
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_EnmanuelPaulino.Entidades
 {
-    public class Inscripcion
+    public class InscripcionDetalle
     {
         [Key]
+        public int InscripcionDetallesId { get; set; }
         public int InscripcionId { get; set; }
-        public DateTime Fecha { get; set; }
-        public decimal Monto { get; set; }
-        public virtual List<InscripcionDetalle> Asignatura { get; set; }
-        public Inscripcion()
+        public int AsignaturaId { get; set; }
+        public decimal SubTotal { get; set; }
+
+        public InscripcionDetalle()
         {
+            InscripcionDetallesId = 0;
             InscripcionId = 0;
-            Fecha = DateTime.Now;
-            Monto = 0;
-            Asignatura = new List<InscripcionDetalle>();
+            AsignaturaId = 0;
+            SubTotal = 0;
         }
     }
 }
