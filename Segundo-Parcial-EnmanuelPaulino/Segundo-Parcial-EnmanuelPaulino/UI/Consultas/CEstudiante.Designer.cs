@@ -46,79 +46,83 @@
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Location = new System.Drawing.Point(12, 74);
             this.DataGridView.Name = "DataGridView";
-            this.DataGridView.Size = new System.Drawing.Size(776, 345);
+            this.DataGridView.Size = new System.Drawing.Size(654, 326);
             this.DataGridView.TabIndex = 0;
-            this.DataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
             // DesdeDateTimePicker
             // 
             this.DesdeDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.DesdeDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DesdeDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DesdeDateTimePicker.Location = new System.Drawing.Point(12, 30);
+            this.DesdeDateTimePicker.Location = new System.Drawing.Point(19, 30);
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
-            this.DesdeDateTimePicker.Size = new System.Drawing.Size(124, 20);
+            this.DesdeDateTimePicker.Size = new System.Drawing.Size(95, 24);
             this.DesdeDateTimePicker.TabIndex = 1;
-            this.DesdeDateTimePicker.ValueChanged += new System.EventHandler(this.DesdeDateTimePicker_ValueChanged);
             // 
             // HastaDateTimePicker
             // 
             this.HastaDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.HastaDateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HastaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.HastaDateTimePicker.Location = new System.Drawing.Point(229, 30);
+            this.HastaDateTimePicker.Location = new System.Drawing.Point(148, 30);
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
-            this.HastaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.HastaDateTimePicker.Size = new System.Drawing.Size(96, 24);
             this.HastaDateTimePicker.TabIndex = 1;
-            this.HastaDateTimePicker.ValueChanged += new System.EventHandler(this.HastaDateTimePicker_ValueChanged);
             // 
             // FiltrosComboBox
             // 
             this.FiltrosComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.FiltrosComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FiltrosComboBox.FormattingEnabled = true;
             this.FiltrosComboBox.Items.AddRange(new object[] {
             "Todo",
             "EstudianteId",
             "Nombre",
             "Balance"});
-            this.FiltrosComboBox.Location = new System.Drawing.Point(435, 29);
+            this.FiltrosComboBox.Location = new System.Drawing.Point(279, 28);
             this.FiltrosComboBox.Name = "FiltrosComboBox";
-            this.FiltrosComboBox.Size = new System.Drawing.Size(121, 21);
+            this.FiltrosComboBox.Size = new System.Drawing.Size(101, 26);
             this.FiltrosComboBox.TabIndex = 2;
-            this.FiltrosComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrosComboBox_SelectedIndexChanged);
             // 
             // CriteriosTextBox
             // 
-            this.CriteriosTextBox.Location = new System.Drawing.Point(562, 30);
+            this.CriteriosTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CriteriosTextBox.Location = new System.Drawing.Point(417, 30);
             this.CriteriosTextBox.Name = "CriteriosTextBox";
-            this.CriteriosTextBox.Size = new System.Drawing.Size(123, 20);
+            this.CriteriosTextBox.Size = new System.Drawing.Size(103, 24);
             this.CriteriosTextBox.TabIndex = 3;
-            this.CriteriosTextBox.TextChanged += new System.EventHandler(this.CriteriosTextBox_TextChanged);
             // 
             // ConsultaButton
             // 
-            this.ConsultaButton.Location = new System.Drawing.Point(691, 29);
+            this.ConsultaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ConsultaButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_search_322497;
+            this.ConsultaButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ConsultaButton.Location = new System.Drawing.Point(561, 22);
             this.ConsultaButton.Name = "ConsultaButton";
-            this.ConsultaButton.Size = new System.Drawing.Size(97, 21);
+            this.ConsultaButton.Size = new System.Drawing.Size(105, 35);
             this.ConsultaButton.TabIndex = 4;
             this.ConsultaButton.Text = "Consultar";
+            this.ConsultaButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.ConsultaButton.UseVisualStyleBackColor = true;
             this.ConsultaButton.Click += new System.EventHandler(this.ConsultaButton_Click);
             // 
             // Desde
             // 
             this.Desde.AutoSize = true;
-            this.Desde.Location = new System.Drawing.Point(98, 9);
+            this.Desde.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Desde.Location = new System.Drawing.Point(43, 9);
             this.Desde.Name = "Desde";
-            this.Desde.Size = new System.Drawing.Size(38, 13);
+            this.Desde.Size = new System.Drawing.Size(51, 18);
             this.Desde.TabIndex = 5;
             this.Desde.Text = "Desde";
-            this.Desde.Click += new System.EventHandler(this.Desde_Click);
             // 
             // Hasta
             // 
             this.Hasta.AutoSize = true;
-            this.Hasta.Location = new System.Drawing.Point(328, 9);
+            this.Hasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Hasta.Location = new System.Drawing.Point(172, 9);
             this.Hasta.Name = "Hasta";
-            this.Hasta.Size = new System.Drawing.Size(35, 13);
+            this.Hasta.Size = new System.Drawing.Size(47, 18);
             this.Hasta.TabIndex = 5;
             this.Hasta.Text = "Hasta";
             this.Hasta.Click += new System.EventHandler(this.Hasta_Click);
@@ -126,28 +130,28 @@
             // Filtros
             // 
             this.Filtros.AutoSize = true;
-            this.Filtros.Location = new System.Drawing.Point(474, 9);
+            this.Filtros.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Filtros.Location = new System.Drawing.Point(305, 6);
             this.Filtros.Name = "Filtros";
-            this.Filtros.Size = new System.Drawing.Size(34, 13);
+            this.Filtros.Size = new System.Drawing.Size(49, 18);
             this.Filtros.TabIndex = 5;
             this.Filtros.Text = "Filtros";
-            this.Filtros.Click += new System.EventHandler(this.Filtros_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(600, 9);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(432, 6);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
+            this.label4.Size = new System.Drawing.Size(64, 18);
             this.label4.TabIndex = 5;
             this.label4.Text = "Criterios";
-            this.label4.Click += new System.EventHandler(this.Label4_Click);
             // 
             // CEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(676, 411);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Filtros);
             this.Controls.Add(this.Hasta);

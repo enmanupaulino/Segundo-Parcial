@@ -12,18 +12,19 @@ using System.Windows.Forms;
 
 namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
 {
-    public partial class CEstudiante : Form
+    public partial class CInscripcion : Form
     {
-        public CEstudiante()
+        public CInscripcion()
         {
             InitializeComponent();
             FiltrosComboBox.SelectedIndex = 0;
+
         }
 
         private void ConsultaButton_Click(object sender, EventArgs e)
         {
-            var Listado = new List<Estudiantes>();
-            RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
+            var Listado = new List<Inscripciones>();
+            RepositorioBase<Inscripciones> db = new RepositorioBase<Inscripciones>();
             if (CriteriosTextBox.Text.Trim().Length > 0)
             {
                 switch (FiltrosComboBox.SelectedIndex)
@@ -31,19 +32,26 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
                     case 0: //Todo
                         Listado = db.GetList(p => true);
                         break;
-                    case 1://EstudianteId
+                    case 1://Inscripcion Idd
                         int.TryParse(CriteriosTextBox.Text, out int Id);
-                        Listado = db.GetList(p => p.EstudianteId == Id);
+                        Listado = db.GetList(p => p.InscripcionId == Id);
                         break;
-                    case 2: //Nombres
-                        Listado = db.GetList(p => p.Nombres.Contains(CriteriosTextBox.Text));
+                    case 2: //Cantidad Laboratorio
+                        int CantiLab = Convert.ToInt32(CriteriosTextBox.Text);
+                        Listado = db.GetList(p => p.CantLab == CantiLab );
                         break;
-                    case 3:// balance
-                        int balance = Convert.ToInt32(CriteriosTextBox.Text);
-                        Listado = db.GetList(p => p.Balance == balance);
+                    case 3:// Precio Creditos
+                        int PreciCre = Convert.ToInt32(CriteriosTextBox.Text);
+                        Listado = db.GetList(p => p.PrecCred == PreciCre);
                         break;
+                    case 4: //
+                        int PrecioLab = Convert.ToInt32(CriteriosTextBox.Text);
+                        Listado = db.GetList(p => p.PrecLab == PrecioLab);
+                        break;
+                    
+
                 }
-                Listado = Listado.Where(C => C.FechaIngreso.Date >= DesdeDateTimePicker.Value.Date && C.FechaIngreso.Date <= HastaDateTimePicker.Value.Date).ToList();
+                Listado = Listado.Where(C => C.Fecha.Date >= DesdeDateTimePicker.Value.Date && C.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             }
             else
             {
@@ -52,11 +60,6 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
             }
             DataGridView.DataSource = null;
             DataGridView.DataSource = Listado;
-        }
-
-        private void Hasta_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -51,6 +51,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             CantLabNumericUpdown.Value = inscripcion.CantLab;
             PrecCredNumericUpdown.Value = inscripcion.PrecCred;
             PreclabNumericUpDown.Value = inscripcion.PrecLab;
+           
    
             
 

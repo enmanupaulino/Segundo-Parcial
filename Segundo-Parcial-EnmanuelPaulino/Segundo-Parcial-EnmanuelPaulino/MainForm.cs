@@ -48,5 +48,11 @@ namespace Segundo_Parcial_EnmanuelPaulino
             RInscripcion f = new RInscripcion();
             f.Show();
         }
+
+        private void ConsultaInscripcionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CInscripcion f = new CInscripcion();
+            f.Show();
+        }
     }
 }

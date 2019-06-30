@@ -19,9 +19,11 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             Contexto db = new Contexto();
             try
             {
+
                 RepositorioBase<Estudiantes> rp = new RepositorioBase<Estudiantes>();
                 Estudiantes estudiante = rp.Buscar(inscripciones.EstudianteId);
                 estudiante.Balance += inscripciones.Monto;
+
                 db.Entry(estudiante).State = EntityState.Modified;
                 if (db.Inscripciones.Add(inscripciones) != null)
                 {
@@ -69,11 +71,19 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
 
         public static bool Eliminar(int id)
         {
+           
             bool paso = false;
             Contexto db = new Contexto();
             try
             {
-                var eliminar = db.Inscripciones.Find(id);
+                Inscripciones inscripciones = new Inscripciones();
+                RepositorioBase<Estudiantes> rp = new RepositorioBase<Estudiantes>();
+                Estudiantes estudiante = rp.Buscar(inscripciones.EstudianteId);
+                   var eliminar = db.Inscripciones.Find(id);
+
+                
+                
+                estudiante.Balance -= eliminar.Monto;
                 db.Entry(eliminar).State = EntityState.Deleted;
                 paso = (db.SaveChanges() > 0);
 
@@ -81,7 +91,8 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             catch (Exception)
             { throw; }
             finally
-            { db.Dispose(); }
+            { db.Dispose();
+            }
             return paso;
         }
 

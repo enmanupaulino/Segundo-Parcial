@@ -87,6 +87,12 @@
     <Compile Include="UI\Consultas\CEstudiante.Designer.cs">
       <DependentUpon>CEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Consultas\CInscripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Consultas\CInscripcion.Designer.cs">
+      <DependentUpon>CInscripcion.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Registros\RInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     <EmbeddedResource Include="UI\Consultas\CEstudiante.resx">
       <DependentUpon>CEstudiante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\Consultas\CInscripcion.resx">
+      <DependentUpon>CInscripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Registros\RAsignaturas.resx">
       <DependentUpon>RAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +165,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Script\Script.sql" />
+    <None Include="Resources\iconfinder_meanicons_24_197210.png" />
+    <None Include="Resources\iconfinder_new10_216291.png" />
+    <None Include="Resources\iconfinder_delete_227590.png" />
+    <None Include="Resources\iconfinder_add_134224.png" />
+    <None Include="Resources\iconfinder_save_326688.png" />
+    <None Include="Resources\iconfinder_search_322497.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

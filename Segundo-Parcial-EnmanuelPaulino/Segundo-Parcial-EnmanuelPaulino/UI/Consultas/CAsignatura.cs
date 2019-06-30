@@ -53,5 +53,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
             DataGridView.DataSource = null;
             DataGridView.DataSource = Listado;
         }
+
+       
     }
 }
