@@ -48,6 +48,13 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             InscripcionIdNumericUpDown.Value = inscripcion.InscripcionId;
             FechaDateTimePicker.Value = inscripcion.Fecha;
             MontoNumericUpDown.Value = inscripcion.Monto;
+            CantLabNumericUpdown.Value = inscripcion.CantLab;
+            PrecCredNumericUpdown.Value = inscripcion.PrecCred;
+            PreclabNumericUpDown.Value = inscripcion.PrecLab;
+   
+            
+
+            
 
         }
 
