@@ -6,7 +6,8 @@ create table Asignaturas
 (
 AsignaturasId int primary key identity,
 Descripcion varchar (max),
-Creditos decimal
+Creditos int
+FecheIngreso
 
 )
 
@@ -14,12 +15,12 @@ Create table Estudiantes (
 EstudianteId int primary key identity,
 FecheIngreso datetime,
 Nombres varchar (max),
-Balance decimal 
+Balance int 
 
 )
 
 create table Inscripcion(
 InscripcionId int primary key identity,
 Fecha datetime,
-Monto decimal
+Monto int
 )

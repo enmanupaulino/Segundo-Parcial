@@ -13,12 +13,15 @@ namespace Segundo_Parcial_EnmanuelPaulino.Entidades
 
         public int AsignaturasId { get; set; }
         public string Descripcion { get; set; }
-        public decimal Creditos { get; set; }
+        public int Creditos { get; set; }
+        
+        public DateTime FechaAsignatura { get; set; }
         public Asignaturas()
         {
             AsignaturasId = 0;
             Descripcion = string.Empty;
             Creditos = 0;
+            FechaAsignatura = DateTime.Now;
         }
 
     }

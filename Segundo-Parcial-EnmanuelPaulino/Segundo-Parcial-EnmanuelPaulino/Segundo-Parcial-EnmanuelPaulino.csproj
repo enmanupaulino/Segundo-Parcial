@@ -60,12 +60,13 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL\InscripcionBLL.cs" />
     <Compile Include="BLL\IRepositorio.cs" />
     <Compile Include="BLL\RepositorioBase.cs" />
     <Compile Include="DAL\Contexto.cs" />
     <Compile Include="Entidades\Asignaturas.cs" />
     <Compile Include="Entidades\Estudiantes.cs" />
-    <Compile Include="Entidades\Inscripcion.cs" />
+    <Compile Include="Entidades\Inscripciones.cs" />
     <Compile Include="Entidades\InscripcionDetalle.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -74,23 +75,35 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="UI\Registros\Inscripcion.cs">
+    <Compile Include="UI\Consultas\CAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\Inscripcion.Designer.cs">
-      <DependentUpon>Inscripcion.cs</DependentUpon>
+    <Compile Include="UI\Consultas\CAsignatura.Designer.cs">
+      <DependentUpon>CAsignatura.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\Asignaturas.cs">
+    <Compile Include="UI\Consultas\CEstudiante.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\Asignaturas.Designer.cs">
-      <DependentUpon>Asignaturas.cs</DependentUpon>
+    <Compile Include="UI\Consultas\CEstudiante.Designer.cs">
+      <DependentUpon>CEstudiante.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\Registros\Estudiantes.cs">
+    <Compile Include="UI\Registros\RInscripcion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI\Registros\Estudiantes.Designer.cs">
-      <DependentUpon>Estudiantes.cs</DependentUpon>
+    <Compile Include="UI\Registros\RInscripcion.Designer.cs">
+      <DependentUpon>RInscripcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\RAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\RAsignaturas.Designer.cs">
+      <DependentUpon>RAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Registros\REstudiantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Registros\REstudiantes.Designer.cs">
+      <DependentUpon>REstudiantes.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -114,14 +127,20 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\Asignaturas.resx">
-      <DependentUpon>Asignaturas.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\CAsignatura.resx">
+      <DependentUpon>CAsignatura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\Estudiantes.resx">
-      <DependentUpon>Estudiantes.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Consultas\CEstudiante.resx">
+      <DependentUpon>CEstudiante.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\Registros\Inscripcion.resx">
-      <DependentUpon>Inscripcion.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Registros\RAsignaturas.resx">
+      <DependentUpon>RAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\REstudiantes.resx">
+      <DependentUpon>REstudiantes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Registros\RInscripcion.resx">
+      <DependentUpon>RInscripcion.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -133,7 +152,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="UI\Consultas\" />
     <Folder Include="UI\Reportes\" />
   </ItemGroup>
   <ItemGroup>

@@ -8,14 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Segundo_Parcial_EnmanuelPaulino.Entidades;
 
 namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
 {
-    public partial class Asignaturas : Form
+    public partial class RAsignaturas : Form
     {
-        public string Descripcion { get; private set; }
+       
 
-        public Asignaturas()
+        public RAsignaturas()
         {
             InitializeComponent();
         }
@@ -33,6 +34,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             asignaturas.AsignaturasId = (int)AsignaturaIdNumericUpDown.Value;
             asignaturas.Descripcion = DescripcionTextBox.Text;
             asignaturas.Creditos = (int)CreditosNumericUpDown.Value;
+            asignaturas.FechaAsignatura = DateTime.Now;
 
             /*   AsignaturaIdNumericUpDown.Value = asignaturas.AsignaturasId;
                DescripcionTextBox.Text = asignaturas.Descripcion;
@@ -45,6 +47,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             AsignaturaIdNumericUpDown.Value = asignaturas.AsignaturasId;
             DescripcionTextBox.Text = asignaturas.Descripcion;
             CreditosNumericUpDown.Value = asignaturas.Creditos;
+            FechaDateTimePicker.Value = asignaturas.FechaAsignatura;
         }
        
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -86,7 +89,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
                 return;
 
             RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
-            Entidades.Asignaturas asiganturas = new Entidades.Asignaturas();
+            Asignaturas asiganturas = new Entidades.Asignaturas();
             asiganturas = LlenaClase();
 
             try
@@ -135,71 +138,78 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
         {
             RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
             MyErrorProvider.Clear();
-
             try
             {
                 if (AsignaturaIdNumericUpDown.Value > 0)
                 {
                     if (db.Eliminar((int)AsignaturaIdNumericUpDown.Value))
                     {
+                        MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
-                        MessageBox.Show("Eliminado correctamente", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                     }
                     else
                     {
-                        MessageBox.Show("No se pudo eliminar", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
+                        MessageBox.Show("Error", "Fallido!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    }
                 }
                 else
                 {
-                    MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Este campo no puede ser cero");
-                    ;
+                    MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Este Campo no puede estar vacio");
+                    
                 }
-
-
             }
             catch (Exception)
             {
-                MessageBox.Show("Hubo un error", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
-            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
-            Entidades.Asignaturas asignatura;
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();   
             MyErrorProvider.Clear();
-
-            try
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out int Id);
+            if (!ExisteEnLaBaseDeDatos())
+                return;
+            else
             {
-
-                if (AsignaturaIdNumericUpDown.Value > 0)
-                {
-                    if (( db.Buscar((int)AsignaturaIdNumericUpDown.Value)) != null)
-                    {
-                        Limpiar();
-                        LlenaCampo(asignatura);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se encontro la asignatura", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-
-                }
-                else
-                {
-                    MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Este campo no puede ser cero");
-                }
-
-
+                Limpiar();
+                LlenaCampo(db.Buscar(Id));
             }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //try
+            //{
+            //    if (AsignaturaIdNumericUpDown.Value > 0)
+            //    {
+            //        if (( db.Buscar((int)AsignaturaIdNumericUpDown.Value)) != null)
+            //        {
+            //            Limpiar();
+            //            LlenaCampo(asignatura);
+            //        }
+            //        else
+            //        {
+            //            MessageBox.Show("No se encontro la asignatura", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Este campo no puede ser cero");
+            //    }
 
-            }
+
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Hubo un error", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
+        }
+        public bool ExisteEnLaBaseDeDatos()
+        {
+            Asignaturas asignaturas = new Asignaturas();
+            RepositorioBase<Asignaturas> db = new RepositorioBase<Asignaturas>();
+            int.TryParse(AsignaturaIdNumericUpDown.Text, out int Id);
+            asignaturas = db.Buscar(Id);
+            return asignaturas != null;
         }
     }
 }

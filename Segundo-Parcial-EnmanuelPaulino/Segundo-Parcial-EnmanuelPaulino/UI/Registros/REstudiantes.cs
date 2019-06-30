@@ -1,4 +1,5 @@
 ﻿using Segundo_Parcial_EnmanuelPaulino.BLL;
+using Segundo_Parcial_EnmanuelPaulino.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,11 +12,12 @@ using System.Windows.Forms;
 
 namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
 {
-    public partial class Estudiantes : Form
+    public partial class REstudiantes : Form
     {
-        public Estudiantes()
+        public REstudiantes()
         {
             InitializeComponent();
+            
         }
 
         private void Limpiar()
@@ -33,11 +35,11 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             estudiantes.Nombres = NombresTextBox.Text;
             estudiantes.EstudianteId = (int)EstudianteIdNumericUpDown.Value;
             estudiantes.FechaIngreso = FechaIngresoDateTimePicker1.Value;
-            estudiantes.Balance = BalanceNumericUpDown.Value;
+            estudiantes.Balance = (int)BalanceNumericUpDown.Value;
 
             return estudiantes;
         }
-        private void LlenarCampos(Entidades.Estudiantes estudiante)
+        private void LlenaCampo(Entidades.Estudiantes estudiante)
         {
 
             EstudianteIdNumericUpDown.Value = estudiante.EstudianteId;
@@ -51,21 +53,18 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             Limpiar();
         }
 
-        private void TextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void GuardarButton_Click(object sender, EventArgs e)
         {
             if (!validar())
                 return;
+            Estudiantes estudiantes = new Estudiantes();
+            estudiantes = LlenarClase();
+            RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
 
             try
             {
-                Entidades.Estudiantes estudiantes = new Entidades.Estudiantes();
-                estudiantes = LlenarClase();
-                RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
+               
 
                 if (EstudianteIdNumericUpDown.Value == 0)
                 {
@@ -84,7 +83,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             }
             catch (Exception)
             {
-                MessageBox.Show("Hubo un error", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
         }
 
@@ -111,36 +110,43 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
-
             try
             {
                 if (EstudianteIdNumericUpDown.Value > 0)
                 {
                     if (db.Eliminar((int)EstudianteIdNumericUpDown.Value))
                     {
-                        MessageBox.Show("Eliminado Correctamente", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     else
                     {
-                        MessageBox.Show("No se puede eliminar", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Error", "Fallido!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     }
-
                 }
-
-
             }
             catch (Exception)
             {
-                MessageBox.Show("Hubo un error eliminando", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw;
             }
 
         }
 
         private void BuscarButton_Click(object sender, EventArgs e)
         {
+
             RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
+            MyErrorProvider.Clear();
+            int.TryParse(EstudianteIdNumericUpDown.Text, out int Id);
+            if (!ExisteEnLaBaseDeDatos())
+                return;
+            else
+            {
+                Limpiar();
+                LlenaCampo(db.Buscar(Id));
+            }
+            /* RepositorioBase<REstudiantes> db = new RepositorioBase<REstudiantes>();
             try
             {
 
@@ -161,10 +167,21 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             catch (Exception)
             {
                 MessageBox.Show("Hubo un error al buscar", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            }*/
         }
 
+        public bool ExisteEnLaBaseDeDatos()
+        {
+            Estudiantes estudiantes = new Estudiantes();
+            RepositorioBase<Estudiantes> db = new RepositorioBase<Estudiantes>();
+            int.TryParse(EstudianteIdNumericUpDown.Text, out int Id);
+            estudiantes = db.Buscar(Id);
+            return estudiantes != null;
+        }
 
+        private void FechaIngresoDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

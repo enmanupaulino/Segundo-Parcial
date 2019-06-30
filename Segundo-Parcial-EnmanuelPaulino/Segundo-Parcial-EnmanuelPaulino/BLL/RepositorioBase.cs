@@ -44,7 +44,6 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             catch (Exception)
             {
                 throw;
-
             }
             return paso;
         }

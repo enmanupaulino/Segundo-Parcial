@@ -1,6 +1,6 @@
 ﻿namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
 {
-    partial class Estudiantes
+    partial class REstudiantes
     {
         /// <summary>
         /// Required designer variable.
@@ -124,6 +124,11 @@
             // BalanceNumericUpDown
             // 
             this.BalanceNumericUpDown.Location = new System.Drawing.Point(202, 195);
+            this.BalanceNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.BalanceNumericUpDown.Name = "BalanceNumericUpDown";
             this.BalanceNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.BalanceNumericUpDown.TabIndex = 3;
@@ -152,12 +157,13 @@
             this.FechaIngresoDateTimePicker1.Name = "FechaIngresoDateTimePicker1";
             this.FechaIngresoDateTimePicker1.Size = new System.Drawing.Size(79, 20);
             this.FechaIngresoDateTimePicker1.TabIndex = 5;
+            this.FechaIngresoDateTimePicker1.ValueChanged += new System.EventHandler(this.FechaIngresoDateTimePicker1_ValueChanged);
             // 
             // MyErrorProvider
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // Estudiantes
+            // REstudiantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +180,7 @@
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
-            this.Name = "Estudiantes";
+            this.Name = "REstudiantes";
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.EstudianteIdNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BalanceNumericUpDown)).EndInit();

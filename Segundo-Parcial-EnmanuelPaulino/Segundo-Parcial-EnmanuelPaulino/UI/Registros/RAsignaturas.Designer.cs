@@ -1,6 +1,6 @@
 ﻿namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
 {
-    partial class Asignaturas
+    partial class RAsignaturas
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,8 @@
             this.NuevoButton = new System.Windows.Forms.Button();
             this.GuardarButton = new System.Windows.Forms.Button();
             this.MyErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MyErrorProvider)).BeginInit();
@@ -49,12 +51,12 @@
             // 
             this.DescripcionTextBox.Location = new System.Drawing.Point(181, 70);
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.Size = new System.Drawing.Size(100, 20);
+            this.DescripcionTextBox.Size = new System.Drawing.Size(120, 20);
             this.DescripcionTextBox.TabIndex = 14;
             // 
             // CreditosNumericUpDown
             // 
-            this.CreditosNumericUpDown.Location = new System.Drawing.Point(181, 106);
+            this.CreditosNumericUpDown.Location = new System.Drawing.Point(181, 128);
             this.CreditosNumericUpDown.Name = "CreditosNumericUpDown";
             this.CreditosNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.CreditosNumericUpDown.TabIndex = 13;
@@ -69,7 +71,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 114);
+            this.label3.Location = new System.Drawing.Point(48, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 9;
@@ -137,11 +139,31 @@
             // 
             this.MyErrorProvider.ContainerControl = this;
             // 
-            // Asignaturas
+            // FechaDateTimePicker
+            // 
+            this.FechaDateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaDateTimePicker.Location = new System.Drawing.Point(181, 102);
+            this.FechaDateTimePicker.Name = "FechaDateTimePicker";
+            this.FechaDateTimePicker.Size = new System.Drawing.Size(120, 20);
+            this.FechaDateTimePicker.TabIndex = 15;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(48, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(40, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Fecha ";
+            // 
+            // RAsignaturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(525, 344);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(this.CreditosNumericUpDown);
             this.Controls.Add(this.AsignaturaIdNumericUpDown);
@@ -152,7 +174,7 @@
             this.Controls.Add(this.EliminarButton);
             this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
-            this.Name = "Asignaturas";
+            this.Name = "RAsignaturas";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.CreditosNumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AsignaturaIdNumericUpDown)).EndInit();
@@ -175,5 +197,7 @@
         private System.Windows.Forms.Button NuevoButton;
         private System.Windows.Forms.Button GuardarButton;
         private System.Windows.Forms.ErrorProvider MyErrorProvider;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DateTimePicker FechaDateTimePicker;
     }
 }

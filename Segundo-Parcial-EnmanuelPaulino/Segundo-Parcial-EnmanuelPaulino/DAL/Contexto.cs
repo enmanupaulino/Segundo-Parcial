@@ -12,7 +12,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.DAL
     {
         public DbSet<Estudiantes> Estudiantes { get; set; }
         public DbSet<Asignaturas> Asignaturas { get; set; }
-        public DbSet<Inscripcion>Inscripcions { get; set; }
+        public DbSet<Inscripciones>Inscripciones { get; set; }
 
         public Contexto() : base("ConStr")
         {

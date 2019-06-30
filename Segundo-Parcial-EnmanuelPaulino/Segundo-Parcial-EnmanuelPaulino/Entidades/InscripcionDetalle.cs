@@ -13,14 +13,11 @@ namespace Segundo_Parcial_EnmanuelPaulino.Entidades
         public int InscripcionDetallesId { get; set; }
         public int InscripcionId { get; set; }
         public int AsignaturaId { get; set; }
-        public decimal SubTotal { get; set; }
-
         public InscripcionDetalle()
         {
             InscripcionDetallesId = 0;
             InscripcionId = 0;
             AsignaturaId = 0;
-            SubTotal = 0;
         }
     }
 }
