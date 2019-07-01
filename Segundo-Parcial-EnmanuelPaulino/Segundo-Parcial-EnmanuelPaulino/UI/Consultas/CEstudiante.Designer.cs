@@ -38,16 +38,17 @@
             this.Hasta = new System.Windows.Forms.Label();
             this.Filtros = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.FechaCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // DataGridView
             // 
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DataGridView.Location = new System.Drawing.Point(12, 74);
+            this.DataGridView.Location = new System.Drawing.Point(12, 99);
             this.DataGridView.Name = "DataGridView";
             this.DataGridView.ReadOnly = true;
-            this.DataGridView.Size = new System.Drawing.Size(654, 326);
+            this.DataGridView.Size = new System.Drawing.Size(654, 301);
             this.DataGridView.TabIndex = 0;
             // 
             // DesdeDateTimePicker
@@ -148,11 +149,23 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Criterios";
             // 
+            // FechaCheckBox
+            // 
+            this.FechaCheckBox.AutoSize = true;
+            this.FechaCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaCheckBox.Location = new System.Drawing.Point(19, 60);
+            this.FechaCheckBox.Name = "FechaCheckBox";
+            this.FechaCheckBox.Size = new System.Drawing.Size(127, 21);
+            this.FechaCheckBox.TabIndex = 27;
+            this.FechaCheckBox.Text = "Filtrar por fecha";
+            this.FechaCheckBox.UseVisualStyleBackColor = true;
+            // 
             // CEstudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 411);
+            this.Controls.Add(this.FechaCheckBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Filtros);
             this.Controls.Add(this.Hasta);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Label Hasta;
         private System.Windows.Forms.Label Filtros;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.CheckBox FechaCheckBox;
     }
 }

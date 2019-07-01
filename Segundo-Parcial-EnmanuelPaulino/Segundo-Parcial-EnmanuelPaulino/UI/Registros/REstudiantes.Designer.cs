@@ -107,6 +107,7 @@
             this.NombresTextBox.Name = "NombresTextBox";
             this.NombresTextBox.Size = new System.Drawing.Size(205, 24);
             this.NombresTextBox.TabIndex = 4;
+            this.NombresTextBox.TextChanged += new System.EventHandler(this.NombresTextBox_TextChanged);
             // 
             // label4
             // 

@@ -39,17 +39,19 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
                         Listado = db.GetList(p => p.Descripcion.Contains(CriteriosTextBox.Text));
                         break;
                     case 3:// balance
-                        int balance = Convert.ToInt32(CriteriosTextBox.Text);
+                        int.TryParse(CriteriosTextBox.Text, out int balance);
                         Listado = db.GetList(p => p.Creditos == balance);
                         break;
                 }
-                Listado = Listado.Where(C => C.FechaAsignatura.Date >= DesdeDateTimePicker.Value.Date && C.FechaAsignatura.Date <= HastaDateTimePicker.Value.Date).ToList();
+                
             }
             else
-            {
+            
                 Listado = db.GetList(p => true);
 
-            }
+            if (FechaCheckBox.Checked == true)
+                Listado = Listado.Where(x => x.FechaAsignatura.Date >= DesdeDateTimePicker.Value.Date && x.FechaAsignatura.Date <= HastaDateTimePicker.Value.Date).ToList();
+
             DataGridView.DataSource = null;
             DataGridView.DataSource = Listado;
         }

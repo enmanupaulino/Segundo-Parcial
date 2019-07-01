@@ -30,7 +30,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             PrecCredNumericUpdown.Value = 0;
             CantLabNumericUpdown.Value = 0;
             PreclabNumericUpDown.Value = 0;
-            EstudianteComboBox.SelectedIndex =  0;
+            //EstudianteComboBox.SelectedIndex =  0;
             this.Detalle = new List<InscripcionDetalle>();
             CargarGrid();
 
@@ -186,12 +186,11 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             int.TryParse(InscripcionIdNumericUpDown.Text, out int Id);
             if (!ExisteEnLaBaseDeDatos())
             {
-                Limpiar();
                 return;
             } 
             else
             {
-                Limpiar();
+                //Limpiar();
                 LlenaCampo(db.Buscar(Id));
                 CargarGrid();
             }

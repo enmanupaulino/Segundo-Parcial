@@ -53,10 +53,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             try
             {
 
-               /* var estudiante = est.Buscar(inscripciones.EstudianteId);
-                var anterior = inscripciones.Monto;
-
-                inscripciones.Monto -= estudiante.EstudianteId;*/
+              
 
                 
 

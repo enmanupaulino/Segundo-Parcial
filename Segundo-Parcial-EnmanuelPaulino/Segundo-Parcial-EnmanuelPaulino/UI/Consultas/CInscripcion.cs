@@ -14,6 +14,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
 {
     public partial class CInscripcion : Form
     {
+        
         public CInscripcion()
         {
             InitializeComponent();
@@ -50,16 +51,20 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
                         break;
                     
 
-                }
-                Listado = Listado.Where(C => C.Fecha.Date >= DesdeDateTimePicker.Value.Date && C.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
+                }  
             }
             else
-            {
                 Listado = db.GetList(p => true);
-
-            }
+            
+            if (FechaCheckBox.Checked == true)
+                Listado = Listado.Where(x => x.Fecha.Date >= DesdeDateTimePicker.Value.Date && x.Fecha.Date <= HastaDateTimePicker.Value.Date).ToList();
             DataGridView.DataSource = null;
             DataGridView.DataSource = Listado;
+        }
+
+        private void FiltrosComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

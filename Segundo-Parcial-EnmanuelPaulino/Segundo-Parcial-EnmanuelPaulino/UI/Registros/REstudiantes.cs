@@ -152,28 +152,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
                 Limpiar();
                 LlenaCampo(db.Buscar(Id));
             }
-            /* RepositorioBase<REstudiantes> db = new RepositorioBase<REstudiantes>();
-            try
-            {
-
-                if (EstudianteIdNumericUpDown.Value > 0)
-                {
-                    Entidades.Estudiantes estudiante = new Entidades.Estudiantes();
-                    if (( db.Buscar((int)EstudianteIdNumericUpDown.Value)) != null)
-                    {
-                        Limpiar();
-                        LlenarCampos(estudiante);
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se pudo encontrar", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Hubo un error al buscar", "Error!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }*/
+         
         }
 
         public bool ExisteEnLaBaseDeDatos()
@@ -186,6 +165,11 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
         }
 
         private void FechaIngresoDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NombresTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

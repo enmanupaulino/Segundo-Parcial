@@ -38,7 +38,7 @@
             this.DesdeDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DataGridView = new System.Windows.Forms.DataGridView();
             this.ConsultaButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FechaCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,13 +97,15 @@
             this.FiltrosComboBox.FormattingEnabled = true;
             this.FiltrosComboBox.Items.AddRange(new object[] {
             "Todo",
-            "AsignaturaId",
-            "Descripcion",
-            "Creditos"});
+            "Incripcion Id",
+            "Cantidad Laboratorio",
+            "Precio Credito",
+            "Precio Laboratorio"});
             this.FiltrosComboBox.Location = new System.Drawing.Point(269, 29);
             this.FiltrosComboBox.Name = "FiltrosComboBox";
             this.FiltrosComboBox.Size = new System.Drawing.Size(121, 26);
             this.FiltrosComboBox.TabIndex = 19;
+            this.FiltrosComboBox.SelectedIndexChanged += new System.EventHandler(this.FiltrosComboBox_SelectedIndexChanged);
             // 
             // HastaDateTimePicker
             // 
@@ -148,20 +150,22 @@
             this.ConsultaButton.UseVisualStyleBackColor = true;
             this.ConsultaButton.Click += new System.EventHandler(this.ConsultaButton_Click);
             // 
-            // textBox1
+            // FechaCheckBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(422, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(113, 24);
-            this.textBox1.TabIndex = 26;
+            this.FechaCheckBox.AutoSize = true;
+            this.FechaCheckBox.Location = new System.Drawing.Point(17, 60);
+            this.FechaCheckBox.Name = "FechaCheckBox";
+            this.FechaCheckBox.Size = new System.Drawing.Size(99, 17);
+            this.FechaCheckBox.TabIndex = 26;
+            this.FechaCheckBox.Text = "Filtrar por fecha";
+            this.FechaCheckBox.UseVisualStyleBackColor = true;
             // 
             // CInscripcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 415);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.FechaCheckBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.Filtros);
             this.Controls.Add(this.Hasta);
@@ -192,6 +196,6 @@
         private System.Windows.Forms.DateTimePicker HastaDateTimePicker;
         private System.Windows.Forms.DateTimePicker DesdeDateTimePicker;
         private System.Windows.Forms.DataGridView DataGridView;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox FechaCheckBox;
     }
 }
