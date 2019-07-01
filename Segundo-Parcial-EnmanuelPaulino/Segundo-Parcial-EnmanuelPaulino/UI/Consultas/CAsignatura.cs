@@ -46,7 +46,6 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
                 
             }
             else
-            
                 Listado = db.GetList(p => true);
 
             if (FechaCheckBox.Checked == true)
@@ -55,7 +54,6 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Consultas
             DataGridView.DataSource = null;
             DataGridView.DataSource = Listado;
         }
-
-       
+  
     }
 }
