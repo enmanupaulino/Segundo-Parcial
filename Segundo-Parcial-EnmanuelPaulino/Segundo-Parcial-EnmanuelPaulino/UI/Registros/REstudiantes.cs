@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -91,7 +92,12 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
         {
             bool paso = true;
             MyErrorProvider.Clear();
-
+            var regex = new Regex(@"^[A-Za-z ]+$");
+            if (!(regex.IsMatch(NombresTextBox.Text)))
+            {
+                MyErrorProvider.SetError(NombresTextBox, "El nombre solo debe contener letras"); 
+                paso = false;
+            }
             if (string.IsNullOrWhiteSpace(NombresTextBox.Text))
             {
                 MyErrorProvider.SetError(NombresTextBox, "Este campo no puede estar vacio");

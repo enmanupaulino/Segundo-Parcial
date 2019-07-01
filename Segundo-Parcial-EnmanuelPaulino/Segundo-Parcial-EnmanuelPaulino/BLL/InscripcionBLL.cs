@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace Segundo_Parcial_EnmanuelPaulino.BLL
 {
-   public class InscripcionBLL
+   public class InscripcionBLL : RepositorioBase<Inscripciones>
     {
-        public bool Guardar(Inscripciones inscripciones)
+        public override  bool Guardar(Inscripciones inscripciones)
         {
             bool paso = false;
             //Creamos una instancia del contexto para poder conectar con la DB
@@ -43,13 +43,54 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             return paso;
         }
 
-        public bool Modificar(Inscripciones inscripciones)
+        public override bool Modificar(Inscripciones inscripciones)
         {
  
             bool paso = false;
             Contexto db = new Contexto();
+            
+            RepositorioBase<Estudiantes> est = new RepositorioBase<Estudiantes>();
             try
             {
+
+               /* var estudiante = est.Buscar(inscripciones.EstudianteId);
+                var anterior = inscripciones.Monto;
+
+                inscripciones.Monto -= estudiante.EstudianteId;*/
+
+                
+
+                var estudiante = est.Buscar(inscripciones.EstudianteId);
+
+                var anterior = new RepositorioBase<Inscripciones>().Buscar(inscripciones.InscripcionId);
+
+                estudiante.Balance -= anterior.Monto;
+
+                foreach (var item in anterior.Asignatura)
+                {
+                    if (!inscripciones.Asignatura.Any(A => A.InscripcionDetallesId == item.InscripcionDetallesId))
+                         db.Entry(item).State = EntityState.Deleted;
+
+                }
+
+                foreach (var item in inscripciones.Asignatura)
+                {
+                    if (item.InscripcionDetallesId == 0)
+                        db.Entry(item).State = EntityState.Added;
+                    else
+                        db.Entry(item).State = EntityState.Modified;
+                }
+
+
+               
+                estudiante.Balance += inscripciones.Monto;
+                est.Modificar(estudiante);
+
+                db.Entry(inscripciones).State = EntityState.Modified;
+
+                paso = db.SaveChanges() > 0;
+
+
                 /*var Anterior = db.Inscripciones.Find(persona.PersonaId);
                 foreach (var item in Anterior.telefonos)
                 {
@@ -69,7 +110,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             return paso;
         }
 
-        public static bool Eliminar(int id)
+        public override bool Eliminar(int id)
         {
            
             bool paso = false;
@@ -77,15 +118,34 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             try
             {
                 Inscripciones inscripciones = new Inscripciones();
+                /* RepositorioBase<Estudiantes> rp = new RepositorioBase<Estudiantes>();
+                 Estudiantes estudiante = rp.Buscar(inscripciones.EstudianteId);
+                    var eliminar = db.Inscripciones.Find(id);
+
+
+                 db.Entry(estudiante).State = EntityState.Modified;
+                 estudiante.Balance -= eliminar.Monto;
+                 db.Entry(eliminar).State = EntityState.Deleted;
+                 paso = (db.SaveChanges() > 0);*/
+
                 RepositorioBase<Estudiantes> rp = new RepositorioBase<Estudiantes>();
-                Estudiantes estudiante = rp.Buscar(inscripciones.EstudianteId);
-                   var eliminar = db.Inscripciones.Find(id);
 
                 
-                
-                estudiante.Balance -= eliminar.Monto;
+                     var eliminar = db.Inscripciones.Find(id);
+                Estudiantes estudiante = rp.Buscar(eliminar.EstudianteId);
+                 estudiante.Balance -= eliminar.Monto;
+                //inscripciones.Monto -= estudiante.Balance;
+                db.Entry(estudiante).State = EntityState.Modified;
                 db.Entry(eliminar).State = EntityState.Deleted;
-                paso = (db.SaveChanges() > 0);
+               
+                paso = (db.SaveChanges() > 0); 
+
+
+                /* if (db.Inscripciones.Add(inscripciones) != null)
+                {
+                    db.SaveChanges();
+                    paso = true;
+                }*/
 
             }
             catch (Exception)
@@ -96,7 +156,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             return paso;
         }
 
-        public static Inscripciones Buscar(int id)
+        public override Inscripciones Buscar(int id)
         {
             Contexto db = new Contexto();
             Inscripciones persona = new Inscripciones();
@@ -112,7 +172,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
             return persona;
         }
 
-        public static List<Inscripciones> GetList(Expression<Func<Inscripciones, bool>> expression)
+        public override List<Inscripciones> GetList(Expression<Func<Inscripciones, bool>> expression)
         {
             List<Inscripciones> Lista = new List<Inscripciones>();
             Contexto db = new Contexto();

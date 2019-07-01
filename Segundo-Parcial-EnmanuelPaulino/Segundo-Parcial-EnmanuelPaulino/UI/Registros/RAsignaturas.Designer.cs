@@ -134,7 +134,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_new10_216291;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(149, 154);
+            this.NuevoButton.Location = new System.Drawing.Point(24, 154);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(80, 38);
             this.NuevoButton.TabIndex = 7;
@@ -148,7 +148,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_save_326688;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(24, 154);
+            this.GuardarButton.Location = new System.Drawing.Point(134, 155);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(101, 38);
             this.GuardarButton.TabIndex = 8;

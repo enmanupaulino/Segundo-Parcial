@@ -50,7 +50,6 @@
             this.label4.Size = new System.Drawing.Size(64, 18);
             this.label4.TabIndex = 12;
             this.label4.Text = "Criterios";
-            
             // 
             // Filtros
             // 
@@ -61,7 +60,6 @@
             this.Filtros.Size = new System.Drawing.Size(49, 18);
             this.Filtros.TabIndex = 13;
             this.Filtros.Text = "Filtros";
-   
             // 
             // Hasta
             // 
@@ -72,7 +70,6 @@
             this.Hasta.Size = new System.Drawing.Size(47, 18);
             this.Hasta.TabIndex = 14;
             this.Hasta.Text = "Hasta";
-
             // 
             // Desde
             // 
@@ -83,7 +80,6 @@
             this.Desde.Size = new System.Drawing.Size(51, 18);
             this.Desde.TabIndex = 15;
             this.Desde.Text = "Desde";
-   
             // 
             // CriteriosTextBox
             // 
@@ -92,7 +88,6 @@
             this.CriteriosTextBox.Name = "CriteriosTextBox";
             this.CriteriosTextBox.Size = new System.Drawing.Size(123, 24);
             this.CriteriosTextBox.TabIndex = 10;
-           
             // 
             // FiltrosComboBox
             // 
@@ -108,7 +103,6 @@
             this.FiltrosComboBox.Name = "FiltrosComboBox";
             this.FiltrosComboBox.Size = new System.Drawing.Size(121, 26);
             this.FiltrosComboBox.TabIndex = 9;
-          
             // 
             // HastaDateTimePicker
             // 
@@ -119,7 +113,6 @@
             this.HastaDateTimePicker.Name = "HastaDateTimePicker";
             this.HastaDateTimePicker.Size = new System.Drawing.Size(96, 24);
             this.HastaDateTimePicker.TabIndex = 7;
-           
             // 
             // DesdeDateTimePicker
             // 
@@ -130,16 +123,15 @@
             this.DesdeDateTimePicker.Name = "DesdeDateTimePicker";
             this.DesdeDateTimePicker.Size = new System.Drawing.Size(95, 24);
             this.DesdeDateTimePicker.TabIndex = 8;
-          
             // 
             // DataGridView
             // 
             this.DataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DataGridView.Location = new System.Drawing.Point(12, 85);
             this.DataGridView.Name = "DataGridView";
+            this.DataGridView.ReadOnly = true;
             this.DataGridView.Size = new System.Drawing.Size(662, 327);
             this.DataGridView.TabIndex = 6;
-            
             // 
             // ConsultaButton
             // 

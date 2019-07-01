@@ -27,6 +27,14 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             InscripcionIdNumericUpDown.Value = 0;
             FechaDateTimePicker.Value = DateTime.Now;
             MontoNumericUpDown.Value = 0;
+            PrecCredNumericUpdown.Value = 0;
+            CantLabNumericUpdown.Value = 0;
+            PreclabNumericUpDown.Value = 0;
+            EstudianteComboBox.SelectedIndex =  0;
+            this.Detalle = new List<InscripcionDetalle>();
+            CargarGrid();
+
+           
 
         }
         private Inscripciones LlenaClase()
@@ -37,8 +45,8 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             inscripcion.EstudianteId = Convert.ToInt32(EstudianteComboBox.SelectedValue);
             inscripcion.Fecha = FechaDateTimePicker.Value;
             inscripcion.Monto = Convert.ToDecimal(MontoNumericUpDown.Value);
-            inscripcion.PrecCred = Convert.ToDecimal(PrecCredNumericUpdown.Value);
-            inscripcion.PrecLab = Convert.ToDecimal(PreclabNumericUpDown.Value);
+            inscripcion.PrecCred = Convert.ToInt32(PrecCredNumericUpdown.Value);
+            inscripcion.PrecLab = Convert.ToInt32(PreclabNumericUpDown.Value);
             inscripcion.CantLab = Convert.ToInt32(CantLabNumericUpdown.Value);
             inscripcion.Asignatura = this.Detalle;
             return inscripcion;
@@ -51,12 +59,10 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             CantLabNumericUpdown.Value = inscripcion.CantLab;
             PrecCredNumericUpdown.Value = inscripcion.PrecCred;
             PreclabNumericUpDown.Value = inscripcion.PrecLab;
-           
-   
-            
-
-            
-
+            EstudianteComboBox.SelectedValue = inscripcion.EstudianteId;
+            EstudianteComboBox.Text = new RepositorioBase<Estudiantes>().Buscar(inscripcion.EstudianteId).Nombres;
+            this.Detalle = inscripcion.Asignatura;
+            CalculoInscripcion();
         }
 
         private void NuevoButton_Click(object sender, EventArgs e)
@@ -144,12 +150,14 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
         private void EliminarButton_Click(object sender, EventArgs e)
         {
             RepositorioBase<Inscripciones> db = new RepositorioBase<Inscripciones>();
+            InscripcionBLL j = new InscripcionBLL();
             MyErrorProvider.Clear();
             try
             {
                 if (InscripcionIdNumericUpDown.Value > 0)
+                    
                 {
-                    if (db.Eliminar((int)InscripcionIdNumericUpDown.Value))
+                    if (j.Eliminar((int)InscripcionIdNumericUpDown.Value))
                     {
                         MessageBox.Show("Eliminado", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
@@ -177,11 +185,15 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             MyErrorProvider.Clear();
             int.TryParse(InscripcionIdNumericUpDown.Text, out int Id);
             if (!ExisteEnLaBaseDeDatos())
+            {
+                Limpiar();
                 return;
+            } 
             else
             {
                 Limpiar();
                 LlenaCampo(db.Buscar(Id));
+                CargarGrid();
             }
 
 
@@ -252,7 +264,21 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             {
                 this.Detalle.RemoveAt(Detalledatagrid.CurrentRow.Index);
                 CargarGrid();
+                CalculoInscripcion();
             }
+        }
+
+        private void CantLabNumericUpdown_ValueChanged(object sender, EventArgs e)
+        {
+            CalculoInscripcion();
+        }
+        private void PreclabNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            CalculoInscripcion();
+        }
+        private void PrecCredNumericUpdown_ValueChanged(object sender, EventArgs e)
+        {
+            CalculoInscripcion();
         }
     }
 }

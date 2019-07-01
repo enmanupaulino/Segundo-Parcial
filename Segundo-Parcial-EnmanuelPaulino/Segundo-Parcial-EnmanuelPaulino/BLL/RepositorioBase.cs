@@ -103,6 +103,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.BLL
                 entity = db.Set<T>().Find(Id);
                 db.Entry(entity).State = System.Data.Entity.EntityState.Deleted;
                 paso = db.SaveChanges() > 0;
+
             }
             catch (Exception)
             {

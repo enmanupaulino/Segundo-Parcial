@@ -42,5 +42,6 @@ namespace Segundo_Parcial_EnmanuelPaulino.Entidades
             PrecCred = precCred;
             Asignatura = asignatura;
         }
+        
     }
 }

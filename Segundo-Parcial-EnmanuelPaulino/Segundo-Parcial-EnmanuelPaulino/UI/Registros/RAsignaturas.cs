@@ -36,9 +36,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
             asignaturas.Creditos = (int)CreditosNumericUpDown.Value;
             asignaturas.FechaAsignatura = DateTime.Now;
 
-            /*   AsignaturaIdNumericUpDown.Value = asignaturas.AsignaturasId;
-               DescripcionTextBox.Text = asignaturas.Descripcion;
-               CreditosNumericUpDown.Value = asignaturas.Creditos;*/
+           
 
             return asignaturas;
         }
@@ -64,14 +62,12 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
                 MyErrorProvider.SetError(DescripcionTextBox, "Este campo no puede estar vacio");
                 paso = false;
             }
-
             if (CreditosNumericUpDown.Value == 0)
             {
                 MyErrorProvider.SetError(CreditosNumericUpDown, "Los creditos no pueden ser cero");
                 paso = false;
 
             }
-
             if (CreditosNumericUpDown.Value > 5)
             {
                 MyErrorProvider.SetError(CreditosNumericUpDown, "Una Asignatura no puede tener mas de 5 creditos");
@@ -177,31 +173,7 @@ namespace Segundo_Parcial_EnmanuelPaulino.UI.Registros
                 Limpiar();
                 LlenaCampo(db.Buscar(Id));
             }
-            //try
-            //{
-            //    if (AsignaturaIdNumericUpDown.Value > 0)
-            //    {
-            //        if (( db.Buscar((int)AsignaturaIdNumericUpDown.Value)) != null)
-            //        {
-            //            Limpiar();
-            //            LlenaCampo(asignatura);
-            //        }
-            //        else
-            //        {
-            //            MessageBox.Show("No se encontro la asignatura", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //        }
-            //    }
-            //    else
-            //    {
-            //        MyErrorProvider.SetError(AsignaturaIdNumericUpDown, "Este campo no puede ser cero");
-            //    }
-
-
-            //}
-            //catch (Exception)
-            //{
-            //    MessageBox.Show("Hubo un error", "Atencion!!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+           
         }
         public bool ExisteEnLaBaseDeDatos()
         {

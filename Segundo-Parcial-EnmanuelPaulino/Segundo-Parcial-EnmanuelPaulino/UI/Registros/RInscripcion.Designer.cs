@@ -39,6 +39,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.AsignaturasComboBox = new System.Windows.Forms.ComboBox();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.AgregarDetalleButton = new System.Windows.Forms.Button();
             this.Detalledatagrid = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.CantLabNumericUpdown = new System.Windows.Forms.NumericUpDown();
@@ -48,8 +50,6 @@
             this.PrecCredNumericUpdown = new System.Windows.Forms.NumericUpDown();
             this.EstudianteComboBox = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.AgregarDetalleButton = new System.Windows.Forms.Button();
             this.BuscarButton = new System.Windows.Forms.Button();
             this.EliminarButton = new System.Windows.Forms.Button();
             this.NuevoButton = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@
             // 
             // MontoNumericUpDown
             // 
+            this.MontoNumericUpDown.Enabled = false;
             this.MontoNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MontoNumericUpDown.Location = new System.Drawing.Point(360, 133);
             this.MontoNumericUpDown.Maximum = new decimal(new int[] {
@@ -163,98 +164,6 @@
             this.AsignaturasComboBox.Size = new System.Drawing.Size(151, 26);
             this.AsignaturasComboBox.TabIndex = 3;
             // 
-            // Detalledatagrid
-            // 
-            this.Detalledatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Detalledatagrid.Location = new System.Drawing.Point(16, 51);
-            this.Detalledatagrid.Name = "Detalledatagrid";
-            this.Detalledatagrid.Size = new System.Drawing.Size(389, 179);
-            this.Detalledatagrid.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(142, 18);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Cant de laboratorios";
-            // 
-            // CantLabNumericUpdown
-            // 
-            this.CantLabNumericUpdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CantLabNumericUpdown.Location = new System.Drawing.Point(166, 42);
-            this.CantLabNumericUpdown.Name = "CantLabNumericUpdown";
-            this.CantLabNumericUpdown.Size = new System.Drawing.Size(120, 24);
-            this.CantLabNumericUpdown.TabIndex = 23;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(140, 18);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Precio X laboratorio";
-            // 
-            // PreclabNumericUpDown
-            // 
-            this.PreclabNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreclabNumericUpDown.Location = new System.Drawing.Point(166, 72);
-            this.PreclabNumericUpDown.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.PreclabNumericUpDown.Name = "PreclabNumericUpDown";
-            this.PreclabNumericUpDown.Size = new System.Drawing.Size(120, 24);
-            this.PreclabNumericUpDown.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(114, 18);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Precio X credito";
-            // 
-            // PrecCredNumericUpdown
-            // 
-            this.PrecCredNumericUpdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PrecCredNumericUpdown.Location = new System.Drawing.Point(166, 102);
-            this.PrecCredNumericUpdown.Maximum = new decimal(new int[] {
-            1000000,
-            0,
-            0,
-            0});
-            this.PrecCredNumericUpdown.Name = "PrecCredNumericUpdown";
-            this.PrecCredNumericUpdown.Size = new System.Drawing.Size(120, 24);
-            this.PrecCredNumericUpdown.TabIndex = 23;
-            // 
-            // EstudianteComboBox
-            // 
-            this.EstudianteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.EstudianteComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstudianteComboBox.FormattingEnabled = true;
-            this.EstudianteComboBox.Location = new System.Drawing.Point(166, 132);
-            this.EstudianteComboBox.Name = "EstudianteComboBox";
-            this.EstudianteComboBox.Size = new System.Drawing.Size(121, 26);
-            this.EstudianteComboBox.TabIndex = 27;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 140);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 18);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Estudiante";
-            // 
             // RemoveButton
             // 
             this.RemoveButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_meanicons_24_197210;
@@ -278,6 +187,102 @@
             this.AgregarDetalleButton.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.AgregarDetalleButton.UseVisualStyleBackColor = true;
             this.AgregarDetalleButton.Click += new System.EventHandler(this.AgregarDetalleButton_Click);
+            // 
+            // Detalledatagrid
+            // 
+            this.Detalledatagrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Detalledatagrid.Location = new System.Drawing.Point(16, 51);
+            this.Detalledatagrid.Name = "Detalledatagrid";
+            this.Detalledatagrid.ReadOnly = true;
+            this.Detalledatagrid.Size = new System.Drawing.Size(389, 179);
+            this.Detalledatagrid.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(18, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 18);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Cant de laboratorios";
+            // 
+            // CantLabNumericUpdown
+            // 
+            this.CantLabNumericUpdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CantLabNumericUpdown.Location = new System.Drawing.Point(166, 42);
+            this.CantLabNumericUpdown.Name = "CantLabNumericUpdown";
+            this.CantLabNumericUpdown.Size = new System.Drawing.Size(120, 24);
+            this.CantLabNumericUpdown.TabIndex = 23;
+            this.CantLabNumericUpdown.ValueChanged += new System.EventHandler(this.CantLabNumericUpdown_ValueChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(18, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(140, 18);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Precio X laboratorio";
+            // 
+            // PreclabNumericUpDown
+            // 
+            this.PreclabNumericUpDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreclabNumericUpDown.Location = new System.Drawing.Point(166, 72);
+            this.PreclabNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.PreclabNumericUpDown.Name = "PreclabNumericUpDown";
+            this.PreclabNumericUpDown.Size = new System.Drawing.Size(120, 24);
+            this.PreclabNumericUpDown.TabIndex = 23;
+            this.PreclabNumericUpDown.ValueChanged += new System.EventHandler(this.PreclabNumericUpDown_ValueChanged);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(18, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(114, 18);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Precio X credito";
+            // 
+            // PrecCredNumericUpdown
+            // 
+            this.PrecCredNumericUpdown.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PrecCredNumericUpdown.Location = new System.Drawing.Point(166, 102);
+            this.PrecCredNumericUpdown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
+            this.PrecCredNumericUpdown.Name = "PrecCredNumericUpdown";
+            this.PrecCredNumericUpdown.Size = new System.Drawing.Size(120, 24);
+            this.PrecCredNumericUpdown.TabIndex = 23;
+            this.PrecCredNumericUpdown.ValueChanged += new System.EventHandler(this.PrecCredNumericUpdown_ValueChanged);
+            // 
+            // EstudianteComboBox
+            // 
+            this.EstudianteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.EstudianteComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstudianteComboBox.FormattingEnabled = true;
+            this.EstudianteComboBox.Location = new System.Drawing.Point(166, 132);
+            this.EstudianteComboBox.Name = "EstudianteComboBox";
+            this.EstudianteComboBox.Size = new System.Drawing.Size(121, 26);
+            this.EstudianteComboBox.TabIndex = 27;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(18, 140);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 18);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Estudiante";
             // 
             // BuscarButton
             // 
@@ -313,7 +318,7 @@
             this.NuevoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NuevoButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_new10_216291;
             this.NuevoButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.NuevoButton.Location = new System.Drawing.Point(200, 450);
+            this.NuevoButton.Location = new System.Drawing.Point(30, 450);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(86, 32);
             this.NuevoButton.TabIndex = 17;
@@ -327,7 +332,7 @@
             this.GuardarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GuardarButton.Image = global::Segundo_Parcial_EnmanuelPaulino.Properties.Resources.iconfinder_save_326688;
             this.GuardarButton.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.GuardarButton.Location = new System.Drawing.Point(28, 450);
+            this.GuardarButton.Location = new System.Drawing.Point(178, 450);
             this.GuardarButton.Name = "GuardarButton";
             this.GuardarButton.Size = new System.Drawing.Size(94, 32);
             this.GuardarButton.TabIndex = 18;
@@ -346,6 +351,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.FechaDateTimePicker);
             this.Controls.Add(this.PrecCredNumericUpdown);
+            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.PreclabNumericUpDown);
             this.Controls.Add(this.CantLabNumericUpdown);
             this.Controls.Add(this.MontoNumericUpDown);
@@ -358,7 +364,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BuscarButton);
             this.Controls.Add(this.EliminarButton);
-            this.Controls.Add(this.NuevoButton);
             this.Controls.Add(this.GuardarButton);
             this.Name = "RInscripcion";
             this.Text = "Form1";
